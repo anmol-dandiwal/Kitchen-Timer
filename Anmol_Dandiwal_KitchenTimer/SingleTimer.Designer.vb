@@ -34,6 +34,9 @@ Partial Class SingleTimer
         'StartButton
         '
         Me.StartButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.StartButton.FlatAppearance.BorderSize = 0
+        Me.StartButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
+        Me.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.StartButton.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.StartButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.StartButton.Location = New System.Drawing.Point(18, 131)
@@ -48,6 +51,9 @@ Partial Class SingleTimer
         '
         Me.StopButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.StopButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.StopButton.FlatAppearance.BorderSize = 0
+        Me.StopButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
+        Me.StopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.StopButton.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.StopButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.StopButton.Location = New System.Drawing.Point(112, 131)
@@ -60,6 +66,9 @@ Partial Class SingleTimer
         'ClearButton
         '
         Me.ClearButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.ClearButton.FlatAppearance.BorderSize = 0
+        Me.ClearButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
+        Me.ClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ClearButton.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.ClearButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ClearButton.Location = New System.Drawing.Point(205, 131)
