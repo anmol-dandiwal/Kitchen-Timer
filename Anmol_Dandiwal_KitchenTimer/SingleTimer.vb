@@ -1,12 +1,10 @@
 ﻿Public Class SingleTimer
-    Public beeping, countdown As Boolean,
-           beeps, frequency As Integer
+    Public beeping As Boolean
     Public WithEvents Timer As Timer
 
     Public Sub New()
         InitializeComponent()
         Me.beeping = False
-        Me.countdown = False
         Me.Timer = New Timer With {.Interval = 1000}
     End Sub
 
@@ -43,12 +41,14 @@
 
     Private Sub StartButton_Click(sender As Object, e As EventArgs) Handles StartButton.Click
         Timer.Start()
+        MakeActive()
     End Sub
 
     Private Sub StopButton_Click(sender As Object, e As EventArgs) Handles StopButton.Click
         If Timer.Enabled Then
             Timer.Stop()
         End If
+        MakeActive()
     End Sub
 
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
@@ -59,6 +59,7 @@
             Minutes.value = 0
             Minutes.Text = String.Format("{0:00}", Minutes.value)
         End If
+        MakeActive()
     End Sub
 
     Private Sub ButtonHover(sender As Object, e As EventArgs) Handles StartButton.MouseEnter, StopButton.MouseEnter, ClearButton.MouseEnter

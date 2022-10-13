@@ -5,7 +5,6 @@
         InitializeComponent()
         value = 0
         maxValue = 99
-        Text = value.ToString
     End Sub
 
     Public Sub Decrement()
@@ -17,6 +16,8 @@
     Public Sub IncreaseBy(newVal As Integer)
         If value + newVal <= maxValue Then
             value += newVal
+        Else
+            value = maxValue
         End If
     End Sub
 End Class
