@@ -1,6 +1,5 @@
 ﻿Public Class SecondsCounter
     Inherits Counter
-    Public Minutes As MinutesCounter
 
     Public Sub New()
         InitializeComponent()
@@ -8,26 +7,24 @@
         maxValue = 59
     End Sub
 
-    Public Sub Decrement()
+    Public Sub Decrement(minutesCounter As MinutesCounter)
         If value > 0 Then
             value -= 1
         Else
             value = maxValue
-            'Minutes.Decrement()
+            minutesCounter.value -= 1
+            minutesCounter.Text = String.Format("{0:00}", minutesCounter.value)
         End If
         Text = String.Format("{0:00}", value)
     End Sub
 
-    Public Sub IncreaseBy(newVal As Integer)
+    Public Sub IncreaseBy(newVal As Integer, minutesCounter As MinutesCounter)
         If value + newVal <= maxValue Then
             value += newVal
-        Else
-            'Minutes.IncreaseBy(1)
+        ElseIf minutesCounter.value < minutesCounter.maxValue Then
+            minutesCounter.value += 1
+            minutesCounter.Text = String.Format("{0:00}", minutesCounter.value)
             value = newVal - (60 - value)
         End If
-    End Sub
-
-    Public Sub SetMinutesCounter(newCounter As MinutesCounter)
-        Minutes = newCounter
     End Sub
 End Class

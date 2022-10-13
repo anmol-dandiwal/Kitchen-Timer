@@ -1,6 +1,5 @@
 ﻿Public Class MinutesCounter
     Inherits Counter
-    Public Seconds As SecondsCounter
 
     Public Sub New()
         InitializeComponent()
@@ -20,9 +19,4 @@
             value += newVal
         End If
     End Sub
-
-    Public Sub SetSecondsCounter(newCounter As SecondsCounter)
-        Seconds = newCounter
-    End Sub
-
 End Class

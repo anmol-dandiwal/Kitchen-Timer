@@ -18,7 +18,7 @@
         If Minutes.value = 0 And Seconds.value = 0 Then
             StartBeeping()
         Else
-            Seconds.Decrement()
+            Seconds.Decrement(Minutes)
         End If
     End Sub
 
@@ -87,7 +87,7 @@
     End Sub
 
     Public Sub AddSeconds(newMins As Integer)
-        Seconds.IncreaseBy(newMins)
+        Seconds.IncreaseBy(newMins, Minutes)
         Seconds.Text = String.Format("{0:00}", Seconds.value)
     End Sub
 End Class
