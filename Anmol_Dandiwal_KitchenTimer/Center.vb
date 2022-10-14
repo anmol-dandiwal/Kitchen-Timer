@@ -17,9 +17,12 @@
 
     Private Sub SecondsButton_Click(sender As Object, e As EventArgs) Handles SecondsButton1.Click, SecondsButton3.Click, SecondsButton10.Click
         SelectedTimer.AddSeconds(sender.tag)
+        SelectedTimer.StartButton.Enabled = True
+        SelectedTimer.ClearButton.Enabled = True
     End Sub
 
     Private Sub MinutesButton1_Click(sender As Object, e As EventArgs) Handles MinutesButton1.Click, MinutesButton3.Click, MinutesButton10.Click
         SelectedTimer.AddMinutes(sender.tag)
+        SelectedTimer.ClearButton.Enabled = True
     End Sub
 End Class

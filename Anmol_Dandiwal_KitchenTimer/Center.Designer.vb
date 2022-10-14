@@ -37,6 +37,9 @@ Partial Class Center
         '
         'SingleTimer1
         '
+        Me.SingleTimer1.AlarmBeeps = 1
+        Me.SingleTimer1.AlarmDuration = 800
+        Me.SingleTimer1.AlarmFrequency = 1000
         Me.SingleTimer1.BackColor = System.Drawing.Color.BurlyWood
         Me.SingleTimer1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.SingleTimer1.Location = New System.Drawing.Point(11, 10)
@@ -44,9 +47,13 @@ Partial Class Center
         Me.SingleTimer1.Name = "SingleTimer1"
         Me.SingleTimer1.Size = New System.Drawing.Size(310, 184)
         Me.SingleTimer1.TabIndex = 0
+        Me.SingleTimer1.Title = "Back Left"
         '
         'SingleTimer3
         '
+        Me.SingleTimer3.AlarmBeeps = 2
+        Me.SingleTimer3.AlarmDuration = 300
+        Me.SingleTimer3.AlarmFrequency = 1500
         Me.SingleTimer3.BackColor = System.Drawing.Color.BurlyWood
         Me.SingleTimer3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.SingleTimer3.Location = New System.Drawing.Point(334, 10)
@@ -54,9 +61,13 @@ Partial Class Center
         Me.SingleTimer3.Name = "SingleTimer3"
         Me.SingleTimer3.Size = New System.Drawing.Size(310, 184)
         Me.SingleTimer3.TabIndex = 2
+        Me.SingleTimer3.Title = "Back Right"
         '
         'SingleTimer4
         '
+        Me.SingleTimer4.AlarmBeeps = 4
+        Me.SingleTimer4.AlarmDuration = 100
+        Me.SingleTimer4.AlarmFrequency = 2500
         Me.SingleTimer4.BackColor = System.Drawing.Color.BurlyWood
         Me.SingleTimer4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.SingleTimer4.Location = New System.Drawing.Point(334, 205)
@@ -64,6 +75,7 @@ Partial Class Center
         Me.SingleTimer4.Name = "SingleTimer4"
         Me.SingleTimer4.Size = New System.Drawing.Size(310, 184)
         Me.SingleTimer4.TabIndex = 3
+        Me.SingleTimer4.Title = "Front Right"
         '
         'SecondsButton1
         '
@@ -169,6 +181,9 @@ Partial Class Center
         '
         'SingleTimer2
         '
+        Me.SingleTimer2.AlarmBeeps = 3
+        Me.SingleTimer2.AlarmDuration = 200
+        Me.SingleTimer2.AlarmFrequency = 2000
         Me.SingleTimer2.BackColor = System.Drawing.Color.BurlyWood
         Me.SingleTimer2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.SingleTimer2.Location = New System.Drawing.Point(11, 205)
@@ -176,6 +191,7 @@ Partial Class Center
         Me.SingleTimer2.Name = "SingleTimer2"
         Me.SingleTimer2.Size = New System.Drawing.Size(310, 184)
         Me.SingleTimer2.TabIndex = 10
+        Me.SingleTimer2.Title = "Front Left"
         '
         'Center
         '

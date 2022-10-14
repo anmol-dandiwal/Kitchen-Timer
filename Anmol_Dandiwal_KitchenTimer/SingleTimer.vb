@@ -1,11 +1,53 @@
-﻿Public Class SingleTimer
+﻿Imports System.Threading
+
+Public Class SingleTimer
     Public beeping As Boolean
-    Public WithEvents Timer As Timer
+    Public frequency, duration, beeps As Integer
+    Public WithEvents Timer As System.Windows.Forms.Timer
+
+    Public Property Title As String
+        Get
+            Return SelectButton.Text
+        End Get
+        Set(value As String)
+            SelectButton.Text = value
+        End Set
+    End Property
+
+    Public Property AlarmFrequency As Integer
+        Get
+            Return frequency
+        End Get
+        Set(freq As Integer)
+            frequency = freq
+        End Set
+    End Property
+
+    Public Property AlarmDuration As Integer
+        Get
+            Return duration
+        End Get
+        Set(dur As Integer)
+            duration = dur
+        End Set
+    End Property
+
+    Public Property AlarmBeeps As Integer
+        Get
+            Return beeps
+        End Get
+        Set(numBeeps As Integer)
+            beeps = numBeeps
+        End Set
+    End Property
 
     Public Sub New()
         InitializeComponent()
         Me.beeping = False
-        Me.Timer = New Timer With {.Interval = 1000}
+        Me.Timer = New System.Windows.Forms.Timer With {.Interval = 1000}
+        StartButton.Enabled = False
+        StopButton.Enabled = False
+        ClearButton.Enabled = False
     End Sub
 
     Private Sub CustomControlsClick(sender As Object, e As EventArgs) Handles ColonLabel.Click, Minutes.Click, Seconds.Click, SelectButton.Click, StartButton.Click, StopButton.Click, ClearButton.Click
@@ -14,7 +56,9 @@
 
     Private Sub HandleTick(sender As Object, e As EventArgs) Handles Timer.Tick
         If Minutes.value = 0 And Seconds.value = 0 Then
-            StartBeeping()
+            newThread.Start()
+            ClearButton.Enabled = False
+            BackColor = Color.OrangeRed
         Else
             Seconds.Decrement(Minutes)
         End If
@@ -23,24 +67,29 @@
     Private Sub StartButton_Click(sender As Object, e As EventArgs) Handles StartButton.Click
         Timer.Start()
         MakeActive()
+        StartButton.Enabled = False
+        StopButton.Enabled = True
+        ClearButton.Enabled = True
     End Sub
 
     Private Sub StopButton_Click(sender As Object, e As EventArgs) Handles StopButton.Click
-        If Timer.Enabled Then
-            Timer.Stop()
-        End If
+        Timer.Stop()
         MakeActive()
+        StartButton.Enabled = True
+        StopButton.Enabled = False
+        beeping = False
     End Sub
 
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
-        If Not beeping Then
-            Timer.Stop()
-            Seconds.value = 0
-            Seconds.Text = String.Format("{0:00}", Seconds.value)
-            Minutes.value = 0
-            Minutes.Text = String.Format("{0:00}", Minutes.value)
-        End If
+        Timer.Stop()
+        Seconds.value = 0
+        Seconds.Text = String.Format("{0:00}", Seconds.value)
+        Minutes.value = 0
+        Minutes.Text = String.Format("{0:00}", Minutes.value)
         MakeActive()
+        StartButton.Enabled = False
+        StopButton.Enabled = False
+        ClearButton.Enabled = False
     End Sub
 
     Private Sub ButtonHover(sender As Object, e As EventArgs) Handles StartButton.MouseEnter, StopButton.MouseEnter, ClearButton.MouseEnter
@@ -75,20 +124,13 @@
 
     Public Sub StartBeeping()
         beeping = True
-        If Me.Name = "SingleTimer1" Then
-            System.Console.Beep(2500, 800)
-        ElseIf Me.Name = "SingleTimer3" Then
-            System.Console.Beep(2500, 300)
-            System.Console.Beep(2500, 300)
-        ElseIf Me.Name = "SingleTimer2" Then
-            System.Console.Beep(2500, 200)
-            System.Console.Beep(2500, 200)
-            System.Console.Beep(2500, 200)
-        ElseIf Me.Name = "SingleTimer4" Then
-            System.Console.Beep(2500, 100)
-            System.Console.Beep(2500, 100)
-            System.Console.Beep(2500, 100)
-            System.Console.Beep(2500, 100)
-        End If
+        For i As Integer = 1 To beeps
+            System.Console.Beep(frequency, duration)
+        Next
     End Sub
+
+    Public Function newThread()
+        Dim thread As Thread = New Thread(New ThreadStart(AddressOf StartBeeping))
+        Return thread
+    End Function
 End Class

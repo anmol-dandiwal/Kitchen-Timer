@@ -38,7 +38,7 @@ Partial Class SingleTimer
         Me.StartButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
         Me.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.StartButton.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.StartButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.StartButton.ForeColor = System.Drawing.Color.Black
         Me.StartButton.Location = New System.Drawing.Point(18, 131)
         Me.StartButton.Margin = New System.Windows.Forms.Padding(0)
         Me.StartButton.Name = "StartButton"
@@ -55,7 +55,7 @@ Partial Class SingleTimer
         Me.StopButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
         Me.StopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.StopButton.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.StopButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.StopButton.ForeColor = System.Drawing.Color.Black
         Me.StopButton.Location = New System.Drawing.Point(112, 131)
         Me.StopButton.Name = "StopButton"
         Me.StopButton.Size = New System.Drawing.Size(87, 50)
@@ -70,7 +70,7 @@ Partial Class SingleTimer
         Me.ClearButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
         Me.ClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ClearButton.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.ClearButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ClearButton.ForeColor = System.Drawing.Color.Black
         Me.ClearButton.Location = New System.Drawing.Point(205, 131)
         Me.ClearButton.Name = "ClearButton"
         Me.ClearButton.Size = New System.Drawing.Size(87, 50)
@@ -116,11 +116,13 @@ Partial Class SingleTimer
         'SelectButton
         '
         Me.SelectButton.AutoSize = True
-        Me.SelectButton.Location = New System.Drawing.Point(293, 3)
+        Me.SelectButton.Font = New System.Drawing.Font("Ebrima", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.SelectButton.Location = New System.Drawing.Point(3, 0)
         Me.SelectButton.Name = "SelectButton"
         Me.SelectButton.Size = New System.Drawing.Size(14, 13)
         Me.SelectButton.TabIndex = 7
         Me.SelectButton.TabStop = True
+        Me.SelectButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.SelectButton.UseVisualStyleBackColor = True
         '
         'SingleTimer
