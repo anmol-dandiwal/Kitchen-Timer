@@ -8,7 +8,7 @@
         Me.Timer = New Timer With {.Interval = 1000}
     End Sub
 
-    Private Sub CustomControlsClick(sender As Object, e As EventArgs) Handles ColonLabel.Click, Minutes.Click, Seconds.Click, SelectButton.Click
+    Private Sub CustomControlsClick(sender As Object, e As EventArgs) Handles ColonLabel.Click, Minutes.Click, Seconds.Click, SelectButton.Click, StartButton.Click, StopButton.Click, ClearButton.Click
         Me.OnClick(EventArgs.Empty)
     End Sub
 
@@ -17,25 +17,6 @@
             StartBeeping()
         Else
             Seconds.Decrement(Minutes)
-        End If
-    End Sub
-
-    Public Sub StartBeeping()
-        beeping = True
-        If Me.Name = "SingleTimer1" Then
-            System.Console.Beep(2500, 800)
-        ElseIf Me.Name = "SingleTimer3" Then
-            System.Console.Beep(2500, 300)
-            System.Console.Beep(2500, 300)
-        ElseIf Me.Name = "SingleTimer2" Then
-            System.Console.Beep(2500, 200)
-            System.Console.Beep(2500, 200)
-            System.Console.Beep(2500, 200)
-        ElseIf Me.Name = "SingleTimer4" Then
-            System.Console.Beep(2500, 100)
-            System.Console.Beep(2500, 100)
-            System.Console.Beep(2500, 100)
-            System.Console.Beep(2500, 100)
         End If
     End Sub
 
@@ -90,5 +71,24 @@
     Public Sub AddSeconds(newMins As Integer)
         Seconds.IncreaseBy(newMins, Minutes)
         Seconds.Text = String.Format("{0:00}", Seconds.value)
+    End Sub
+
+    Public Sub StartBeeping()
+        beeping = True
+        If Me.Name = "SingleTimer1" Then
+            System.Console.Beep(2500, 800)
+        ElseIf Me.Name = "SingleTimer3" Then
+            System.Console.Beep(2500, 300)
+            System.Console.Beep(2500, 300)
+        ElseIf Me.Name = "SingleTimer2" Then
+            System.Console.Beep(2500, 200)
+            System.Console.Beep(2500, 200)
+            System.Console.Beep(2500, 200)
+        ElseIf Me.Name = "SingleTimer4" Then
+            System.Console.Beep(2500, 100)
+            System.Console.Beep(2500, 100)
+            System.Console.Beep(2500, 100)
+            System.Console.Beep(2500, 100)
+        End If
     End Sub
 End Class
